@@ -2,7 +2,7 @@
 <loadFolders>
   <v1.6>
     <li IfModActive="CETeam.CombatExtended">1.6/CE</li>
-    <!-- <li IfModNotActive="CETeam.CombatExtended">1.6/Vanilla</li> -->
+    <li IfModNotActive="CETeam.CombatExtended">1.6/Vanilla</li>
     <li>Common</li>
     <li IfModActive="OskarPotocki.VanillaVehiclesExpanded">1.6/Mods/VVE</li>
   </v1.6>
