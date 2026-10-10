@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>FW_JSeventy_Blueprint</defName>
+		<label>Toyota Land Cruiser J70</label>
+		<description>A cargo transporter, the Land Cruiser J70 is an excellent vehicle for getting material from one location to another with combat capability. Good cargo capacity along with three crew capacity, best suited on flat roads but not natural environment.\n\nThe Land Cruiser J70 has quite low-profile along with its high maneuverability and speed covers for its lack of raw fire power.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1~2 (Upgrades), Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		<graphicData>
+			<texPath>Things/Vehicles/J70/J70</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4.5, 4.5)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>9500</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		<size>(2, 4)</size>
+		<researchPrerequisites>
+			<li>FW_TechnicalAutomotive</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>890</Steel>
+			<Silver>20</Silver>
+			<ComponentIndustrial>28</ComponentIndustrial>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>FW_JSeventy</thingToSpawn>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+
+</Defs>

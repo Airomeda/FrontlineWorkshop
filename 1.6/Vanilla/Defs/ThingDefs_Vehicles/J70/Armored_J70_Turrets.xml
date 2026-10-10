@@ -1,0 +1,141 @@
+<Defs>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_2A28Cannon_Turret</defName>
+		<label>2A28 cannon</label>
+		<description>2A28 cannon loaded with SPG-9 rocket.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>FW_Shot_2A28Sound</shotSound>
+		<projectile>Bullet_Rocket</projectile>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		<reloadTimer>5</reloadTimer>
+		<reloadTimerMultiplierPerCrewCount>
+			<points>
+				<li>(1, 1)</li>
+				<li>(2, 0.75)</li>
+			</points>
+		</reloadTimerMultiplierPerCrewCount>
+		<warmUpTimer>1.5</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>3.0</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1.2</rotationSpeed>
+		<projectileOffset>1.9</projectileOffset>
+		<projectileShifting>
+			<li>-0.05</li>
+		</projectileShifting>
+		<minRange>8</minRange>
+		<maxRange>92</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>1</ticksBetweenShots>
+				<ticksBetweenBursts>3</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<gizmoIconTexPath>Things/Vehicles/J70/Armored/2A28Cannon_TurretGizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.05</gizmoIconScale>
+		<graphicData>
+			<texPath>Things/Vehicles/J70/Armored/2A28Cannon_Top</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3.5, 3.5)</drawSize>
+		</graphicData>
+		<graphics>
+			<li>
+				<graphicData>
+					<texPath>Things/Vehicles/J70/Armored/2A28Cannon_Barrel</texPath>
+					<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+					<shaderType>CutoutComplexPattern</shaderType>
+					<drawSize>(3.5, 3.5)</drawSize>
+				</graphicData>
+				<recoil>
+					<distanceTotal>0.2</distanceTotal>
+					<distancePerTick>0.05</distancePerTick>
+					<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+				</recoil>
+			</li>
+		</graphics>
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<offset>(0, 0, 2)</offset>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_KPVTHMG_Turret</defName>
+		<label>KPVT heavy machine gun</label>
+		<description>KPVT heavy machine gun loaded with 14.5x114mm.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_Minigun</shotSound>
+		<projectile>Bullet_AutocannonTurret</projectile>
+		<reloadTimer>4.2</reloadTimer>
+		<warmUpTimer>1.3</warmUpTimer>
+		<magazineCapacity>100</magazineCapacity>
+		<chargePerAmmoCount>0.5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2.0</rotationSpeed>
+		<projectileOffset>0.25</projectileOffset>
+		<projectileShifting>
+			<li>0</li>
+		</projectileShifting>
+		<maxRange>75</maxRange>
+		<recoil>
+			<distanceTotal>0.15</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+		</recoil>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>5</shotsPerBurst>
+				<ticksBetweenShots>9</ticksBetweenShots>
+				<ticksBetweenBursts>90</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>10</shotsPerBurst>
+				<ticksBetweenShots>9</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>9</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<gizmoIconTexPath>Things/Vehicles/J70/Armored/KPVT_HMG</gizmoIconTexPath>
+		<gizmoIconScale>1.25</gizmoIconScale>
+		<graphicData>
+			<texPath>Things/Vehicles/J70/Armored/KPVT_HMG</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3.25, 3.25)</drawSize>
+		</graphicData>
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+
+</Defs>

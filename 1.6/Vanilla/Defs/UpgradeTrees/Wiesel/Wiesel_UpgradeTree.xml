@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <Vehicles.UpgradeTreeDef>
+    <defName>FW_Wiesel_UpgradeTree</defName>
+    <nodes>
+
+      <li>
+        <key>FW_ATGM_Conversion</key>
+        <label>ATGM Conversion</label>
+        <description>Change the main turret to be BGM-71 TOW ATGM, allowing for more devastating shots over significantly longer distance, but vulnerable during reload.</description>
+        <icon>Things/Vehicles/Upgrades/BGM71_TurretUpgrade</icon>
+        <work>1000</work>
+        <gridCoordinate>(20, 5)</gridCoordinate>
+        <drawSize>(120, 120)</drawSize>
+        <upgrades>
+          <li Class="Vehicles.TurretUpgrade">
+            <turrets>
+              <li>
+                <turretDef>FW_BGM71TOWATGM_Turret</turretDef>
+                <renderProperties>
+                  <north>(0, -0.15)</north>
+                  <south>(0, 0.65)</south>
+                  <east>(-0.5, 0.3)</east>
+                  <west>(0.5, 0.3)</west>
+                </renderProperties>
+                <drawLayer>2</drawLayer>
+                <gizmoLabel>Main Turret</gizmoLabel>
+                <aimPieOffset>(0, 0.35)</aimPieOffset>
+                <key>mainTurret</key>
+              </li>
+            </turrets>
+            <removeTurrets>
+              <li>mainTurret</li>
+            </removeTurrets>
+          </li>
+        </upgrades>
+        <ingredients>
+          <Steel>220</Steel>
+          <ComponentIndustrial>10</ComponentIndustrial>
+        </ingredients>
+      </li>
+
+      <li>
+        <key>FW_MG3_SecondaryTurret</key>
+        <label>MG3 secondary turret</label>
+        <description>Add MG3 as a secondary turret, allowing for more rapid shots perfect for crowd control.</description>
+        <icon>Things/Vehicles/Upgrades/MG3_TurretUpgrade</icon>
+        <work>500</work>
+        <gridCoordinate>(20, 12)</gridCoordinate>
+        <drawSize>(80, 80)</drawSize>
+        <prerequisiteNodes>
+          <li>FW_ATGM_Conversion</li>
+        </prerequisiteNodes>
+        <upgrades>
+          <li Class="Vehicles.TurretUpgrade">
+            <turrets>
+              <li>
+                <turretDef>FW_WieselMG3LMG_Turret</turretDef>
+                <renderProperties>
+                  <north>(0.65, 0.35)</north>
+                  <south>(-0.65, 0.3)</south>
+                  <east>(-0.05, -0.2)</east>
+                  <west>(0.05, 0.8)</west>
+                </renderProperties>
+                <drawLayer>2</drawLayer>
+                <gizmoLabel>Secondary Turret</gizmoLabel>
+                <angleRestricted />
+                <aimPieOffset>(0, 0.05)</aimPieOffset>
+                <key>secondaryTurret</key>
+              </li>
+            </turrets>
+          </li>
+        </upgrades>
+        <ingredients>
+          <Steel>100</Steel>
+          <ComponentIndustrial>6</ComponentIndustrial>
+        </ingredients>
+      </li>
+
+      <!-- ======= Basics ======= -->
+
+      <li>
+        <key>FW_Engine_Upgrade</key>
+        <label>Engine</label>
+        <description>Improve the engine of the vehicle, allowing it to reach higher maximum speed.</description>
+        <icon>Things/Vehicles/Upgrades/EngineUpgrade</icon>
+        <work>600</work>
+        <gridCoordinate>(38, 3)</gridCoordinate>
+        <drawSize>(60, 60)</drawSize>
+        <upgrades>
+          <li Class="Vehicles.StatUpgrade">
+            <vehicleStats>
+              <li>
+                <def>MoveSpeed</def>
+                <value>1.0</value>
+              </li>
+            </vehicleStats>
+          </li>
+        </upgrades>
+        <ingredients>
+          <!-- <VVE_EngineBlock>1</VVE_EngineBlock> -->
+          <Steel>30</Steel>
+          <ComponentIndustrial>1</ComponentIndustrial>
+        </ingredients>
+      </li>
+
+      <li>
+        <key>FW_FuelEfficiency_Upgrade</key>
+        <label>Fuel Consumption</label>
+        <description>Improve the exhaust system of the vehicle, improving fuel efficiency slightly.</description>
+        <icon>Things/Vehicles/Upgrades/FuelEfficiencyUpgrade</icon>
+        <work>600</work>
+        <gridCoordinate>(38, 7)</gridCoordinate>
+        <drawSize>(60, 60)</drawSize>
+        <upgrades>
+          <li Class="Vehicles.StatUpgrade">
+            <statCategories>
+              <li>
+                <def>FuelConsumptionRate</def>
+                <value>-2</value>
+              </li>
+            </statCategories>
+          </li>
+        </upgrades>
+        <ingredients>
+          <!-- <VVE_CarExhaust>2</VVE_CarExhaust> -->
+          <Steel>20</Steel>
+          <ComponentIndustrial>1</ComponentIndustrial>
+        </ingredients>
+      </li>
+
+      <li>
+        <key>FW_FuelCapacity_Upgrade</key>
+        <label>Fuel Capacity</label>
+        <description>Increase the size of the chemtank slightly.</description>
+        <icon>Things/Vehicles/Upgrades/FuelCapacityUpgrade</icon>
+        <work>600</work>
+        <gridCoordinate>(38, 11)</gridCoordinate>
+        <drawSize>(60, 60)</drawSize>
+        <upgrades>
+          <li Class="Vehicles.StatUpgrade">
+            <statCategories>
+              <li>
+                <def>FuelCapacity</def>
+                <value>20</value>
+              </li>
+            </statCategories>
+          </li>
+        </upgrades>
+        <ingredients>
+          <Steel>20</Steel>
+        </ingredients>
+      </li>
+
+    </nodes>
+  </Vehicles.UpgradeTreeDef>
+
+</Defs>

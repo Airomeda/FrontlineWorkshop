@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ResearchTabDef>
+		<defName>FW_VehiclesTab</defName>
+		<label>Frontline Workshop</label>
+	</ResearchTabDef>
+
+</Defs>

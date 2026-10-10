@@ -15,7 +15,7 @@
     <buildDef>FW_105mmHowitzer_Blueprint</buildDef>
     <size>(3, 3)</size>
     <vehicleCategory>Combat</vehicleCategory>
-    <techLevel>Medieval</techLevel>
+    <techLevel>Industrial</techLevel>
     <vehicleType>Land</vehicleType>
     <statBases>
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt>

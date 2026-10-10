@@ -1,0 +1,1977 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.UpgradeTreeDef>
+		<defName>FW_JSeventy_UpgradeTree</defName>
+		<nodes>
+
+			<li>
+				<key>FW_ArmedTrunk</key>
+				<label>Armed Trunk</label>
+				<description>Arm the vehicle trunk, allowing the vehicle to mount a weapon platform on it.</description>
+				<icon>Things/Vehicles/Upgrades/J70_EmplacementUpgrade</icon>
+				<work>500</work>
+				<gridCoordinate>(11, 10)</gridCoordinate>
+				<drawSize>(80, 80)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<label>Gunner</label>
+								<slots>1</slots>
+								<slotsToOperate>1</slotsToOperate>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+							</li>
+						</roles>
+					</li>
+				</upgrades>
+				<ingredients>
+					<Steel>50</Steel>
+				</ingredients>
+			</li>
+
+			<li>
+				<key>FW_Mount_MG3</key>
+				<label>Mount MG3</label>
+				<description>Weld turret platform and mount MG3 light machine gun at the cost of increasing vehicle mass, allowing for more rapid shots perfect for crowd control.</description>
+				<icon>Things/Vehicles/Upgrades/MG3_TurretUpgrade</icon>
+				<work>500</work>
+				<gridCoordinate>(7, 3)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0, 0, -0.55)</drawOffsetNorth>
+									<drawOffsetSouth>(0, 0, 1.10)</drawOffsetSouth>
+									<drawOffsetEast>(-1.05, 0, 0.65)</drawOffsetEast>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>20</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_MG3LMG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, 0.05)</north>
+									<south>(0, 0.35)</south>
+									<east>(-0.3, 0.65)</east>
+									<west>(0.3, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>120</Steel>
+					<ComponentIndustrial>6</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_M1919</key>
+				<label>Mount M1919</label>
+				<description>Weld turret platform and mount M1919 light machine gun at the cost of increasing vehicle mass, allowing for more expanded rapid shots perfect for crowd control.</description>
+				<icon>Things/Vehicles/Upgrades/M1919_TurretUpgrade</icon>
+				<work>500</work>
+				<gridCoordinate>(11, 3)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0, 0, -0.55)</drawOffsetNorth>
+									<drawOffsetSouth>(0, 0, 1.10)</drawOffsetSouth>
+									<drawOffsetEast>(-1.05, 0, 0.65)</drawOffsetEast>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>25</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_M1919LMG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, 0.05)</north>
+									<south>(0, 0.35)</south>
+									<east>(-0.3, 0.65)</east>
+									<west>(0.3, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>140</Steel>
+					<ComponentIndustrial>7</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_PKM</key>
+				<label>Mount PKM</label>
+				<description>Weld turret platform and mount PKM light machine gun at the cost of increasing vehicle mass, allowing for more rapid shots perfect for crowd control.</description>
+				<icon>Things/Vehicles/Upgrades/PKM_TurretUpgrade</icon>
+				<work>500</work>
+				<gridCoordinate>(15, 3)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0, 0, -0.55)</drawOffsetNorth>
+									<drawOffsetSouth>(0, 0, 1.10)</drawOffsetSouth>
+									<drawOffsetEast>(-1.05, 0, 0.65)</drawOffsetEast>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>20</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_PKMLMG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, 0.05)</north>
+									<south>(0, 0.35)</south>
+									<east>(-0.3, 0.65)</east>
+									<west>(0.3, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>120</Steel>
+					<ComponentIndustrial>6</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_DShK</key>
+				<label>Mount DShK</label>
+				<description>Weld turret platform and mount DShK heavy machine gun at the cost of increasing vehicle mass, allowing for more impactful rapid shots suitable against lightly armored vehicle.</description>
+				<icon>Things/Vehicles/Upgrades/DShK_TurretUpgrade</icon>
+				<work>750</work>
+				<gridCoordinate>(3, 6)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0, 0, -0.55)</drawOffsetNorth>
+									<drawOffsetSouth>(0, 0, 1.10)</drawOffsetSouth>
+									<drawOffsetEast>(-1.05, 0, 0.65)</drawOffsetEast>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>30</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_DShKHMG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, 0.05)</north>
+									<south>(0, 0.35)</south>
+									<east>(-0.3, 0.65)</east>
+									<west>(0.3, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>180</Steel>
+					<ComponentIndustrial>7</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_M2HB</key>
+				<label>Mount M2HB</label>
+				<description>Weld turret platform and mount M2HB heavy machine gun at the cost of increasing vehicle mass, allowing for more impactful rapid shots suitable against lightly armored vehicle.</description>
+				<icon>Things/Vehicles/Upgrades/M2HB_TurretUpgrade</icon>
+				<work>750</work>
+				<gridCoordinate>(3, 10)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0, 0, -0.55)</drawOffsetNorth>
+									<drawOffsetSouth>(0, 0, 1.10)</drawOffsetSouth>
+									<drawOffsetEast>(-1.05, 0, 0.65)</drawOffsetEast>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>35</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_M2HBHMG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, 0.05)</north>
+									<south>(0, 0.35)</south>
+									<east>(-0.3, 0.65)</east>
+									<west>(0.3, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>200</Steel>
+					<ComponentIndustrial>7</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_MK19</key>
+				<label>Mount MK19</label>
+				<description>Weld turret platform and mount MK-19 grenade launcher at the cost of increasing vehicle mass, allowing for dispersing blasts perfect for crowd control.</description>
+				<icon>Things/Vehicles/Upgrades/MK19_TurretUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(3, 14)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0, 0, -0.55)</drawOffsetNorth>
+									<drawOffsetSouth>(0, 0, 1.10)</drawOffsetSouth>
+									<drawOffsetEast>(-1.05, 0, 0.65)</drawOffsetEast>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>50</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_MK19GL_Turret</turretDef>
+								<renderProperties>
+									<north>(0, 0.05)</north>
+									<south>(0, 0.35)</south>
+									<east>(-0.3, 0.65)</east>
+									<west>(0.3, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>200</Steel>
+					<ComponentIndustrial>8</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_SPG9</key>
+				<label>Mount SPG-9</label>
+				<description>Weld turret platform and mount SPG-9 recoilless gun at the cost of increasing vehicle mass, allowing for more devastating shots over significantly longer distance suitable against armored vehicle, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/SPG9_TurretUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(7, 17)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>50</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.4, 0, -0.5)</drawOffsetNorth>
+									<drawOffsetSouth>(0.4, 0, 0.9)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.85)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.5)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.4, 0, -0.5)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.4, 0, 0.9)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.5)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.85)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_SPG9RG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.15)</north>
+									<south>(0, 0.6)</south>
+									<east>(-0.5, 0.65)</east>
+									<west>(0.5, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>220</Steel>
+					<ComponentIndustrial>8</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_BGM71TOW</key>
+				<label>Mount BGM-71</label>
+				<description>Weld turret platform and mount BGM-71 TOW ATGM at the cost of increasing vehicle mass, allowing for more devastating shots over significantly longer distance suitable against armored vehicle, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/BGM71_TurretUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(11, 17)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>25</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.4, 0, -0.5)</drawOffsetNorth>
+									<drawOffsetSouth>(0.4, 0, 0.9)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.9)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.35)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.4, 0, -0.5)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.4, 0, 0.9)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.35)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.9)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_BGM71TOWATGM_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.15)</north>
+									<south>(0, 0.6)</south>
+									<east>(-0.5, 0.65)</east>
+									<west>(0.5, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>240</Steel>
+					<ComponentIndustrial>10</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_S5RocketPodDirect</key>
+				<label>Mount S-5 Rocket Pod</label>
+				<description>Weld turret platform and mount S-5 Rocket Pod at the cost of increasing vehicle mass, allowing for more devastating shots over significantly longer distance, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/S5RocketPod_TurretUpgrade</icon>
+				<work>1000</work>
+				<refundFraction>1</refundFraction>
+				<gridCoordinate>(15, 17)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>100</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.4, 0, -0.7)</drawOffsetNorth>
+									<drawOffsetSouth>(0.4, 0, 1.0)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.9)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.35)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.4, 0, -0.7)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.4, 0, 1.0)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.35)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.9)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_S5RocketPodDirect_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.35)</north>
+									<south>(0, 0.65)</south>
+									<east>(-0.7, 0.65)</east>
+									<west>(0.7, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<!-- <angleRestricted>(285, 75)</angleRestricted> -->
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>280</Steel>
+					<ComponentIndustrial>8</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Modify_S5RocketPodIndirect</key>
+				<label>Modify S-5 Rocket Pod (Indirect)</label>
+				<description>Adjust the turret platform elevation of S-5 Rocket Pod, allowing for barrage shots over significantly longer distance, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/S5RocketPod_TurretUpgrade</icon>
+				<work>1000</work>
+				<refundFraction>1</refundFraction>
+				<gridCoordinate>(17, 21)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>100</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.4, 0, -0.7)</drawOffsetNorth>
+									<drawOffsetSouth>(0.4, 0, 1.0)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.9)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.35)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.4, 0, -0.7)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.4, 0, 1.0)</drawOffsetSouth>
+									<drawOffsetEast>(-0.95, 0, 0.35)</drawOffsetEast>
+									<drawOffsetWest>(0.95, 0, 0.9)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_S5RocketPodIndirect_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.35)</north>
+									<south>(0, 0.65)</south>
+									<east>(-0.7, 0.65)</east>
+									<west>(0.7, 0.65)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Mounted Turret</gizmoLabel>
+								<!-- <angleRestricted>(285, 75)</angleRestricted> -->
+								<aimPieOffset>(0, 0.32)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>280</Steel>
+					<ComponentIndustrial>8</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_TurretPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_HowitzerDirect</key>
+				<label>Mount Howitzer</label>
+				<description>Weld howitzer platform and mount Howitzer to the trunk at the cost of increasing vehicle mass, allowing for more devastating shots over significantly longer distance, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/HowitzerDirect_TurretUpgrade</icon>
+				<work>1250</work>
+				<refundFraction>1</refundFraction>
+				<gridCoordinate>(19, 14)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>1500</value>
+							</li>
+							<li>
+								<def>CargoCapacity</def>
+								<value>-50</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.475, 0, -1.0)</drawOffsetNorth>
+									<drawOffsetSouth>(0.475, 0, 1.7)</drawOffsetSouth>
+									<drawOffsetEast>(-1.5, 0, 0.85)</drawOffsetEast>
+									<drawOffsetWest>(1.5, 0, 0.3)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<!-- <pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.475, 0, -1.0)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.475, 0, 1.7)</drawOffsetSouth>
+									<drawOffsetEast>(-1.5, 0, 0.3)</drawOffsetEast>
+									<drawOffsetWest>(1.5, 0, 0.85)</drawOffsetWest>
+								</pawnRenderer> -->
+							</li>
+							<li>
+								<key>passenger</key>
+								<remove>true</remove>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_HowitzerDirect_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.675)</north>
+									<south>(0, 0.7)</south>
+									<east>(-0.825, 0.5)</east>
+									<west>(0.825, 0.5)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<angleRestricted />
+								<aimPieOffset>(0, 1.35)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>260</Steel>
+					<ComponentIndustrial>10</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_HowitzerPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Modify_HowitzerIndirect</key>
+				<label>Modify Howitzer (Indirect)</label>
+				<description>Modify mounted Howitzer to shoot indirectly, allowing for bombardment over significantly longer distance, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/HowitzerIndirect_TurretUpgrade</icon>
+				<work>1250</work>
+				<refundFraction>1</refundFraction>
+				<gridCoordinate>(23, 16)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+					<li>FW_Mount_HowitzerDirect</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>1500</value>
+							</li>
+							<li>
+								<def>CargoCapacity</def>
+								<value>-50</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.475, 0, -1.0)</drawOffsetNorth>
+									<drawOffsetSouth>(0.475, 0, 1.7)</drawOffsetSouth>
+									<drawOffsetEast>(-1.5, 0, 0.85)</drawOffsetEast>
+									<drawOffsetWest>(1.5, 0, 0.25)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<!-- <pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.475, 0, -1.0)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.475, 0, 1.7)</drawOffsetSouth>
+									<drawOffsetEast>(-1.5, 0, 0.25)</drawOffsetEast>
+									<drawOffsetWest>(1.5, 0, 0.85)</drawOffsetWest>
+								</pawnRenderer> -->
+							</li>
+							<li>
+								<key>passenger</key>
+								<remove>true</remove>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_HowitzerIndirect_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.675)</north>
+									<south>(0, 0.7)</south>
+									<east>(-0.825, 0.5)</east>
+									<west>(0.825, 0.5)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<angleRestricted />
+								<aimPieOffset>(0, 0.75)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>260</Steel>
+					<ComponentIndustrial>10</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_HowitzerPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_Mortar</key>
+				<label>Mount Mortar</label>
+				<description>Weld mortar platform and mount Howitzer to the trunk at the cost of increasing vehicle mass, allowing for more devastating shots over significantly longer distance, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/Mortar_TurretUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(19, 6)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>35</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>19</layerEast>
+									<layerWest>23</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(-0.45, 0, -0.6)</drawOffsetNorth>
+									<drawOffsetSouth>(0.45, 0, 1.4)</drawOffsetSouth>
+									<drawOffsetEast>(-1.1, 0, 1.0)</drawOffsetEast>
+									<drawOffsetWest>(1.1, 0, 0.35)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+							<li>
+								<key>loader</key>
+								<label>Loader</label>
+								<slots>1</slots>
+								<handlingTypes>Turret</handlingTypes>
+								<turretIds>
+									<li>mainTurret</li>
+								</turretIds>
+								<exposed>true</exposed>
+								<hitbox>
+									<side>Body</side>
+								</hitbox>
+								<pawnRenderer>
+									<layer>19</layer>
+									<layerNorth>23</layerNorth>
+									<layerSouth>19</layerSouth>
+									<layerEast>23</layerEast>
+									<layerWest>19</layerWest>
+									<angleNorth>0</angleNorth>
+									<angleEast>0</angleEast>
+									<angleNorthEast>45</angleNorthEast>
+									<angleSouthEast>-45</angleSouthEast>
+									<drawOffsetNorth>(0.45, 0, -0.6)</drawOffsetNorth>
+									<drawOffsetSouth>(-0.45, 0, 1.4)</drawOffsetSouth>
+									<drawOffsetEast>(-1.1, 0, 0.35)</drawOffsetEast>
+									<drawOffsetWest>(1.1, 0, 1.0)</drawOffsetWest>
+								</pawnRenderer>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_Mortar_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.85)</north>
+									<south>(0, 0.95)</south>
+									<east>(-0.875, 0.28)</east>
+									<west>(0.875, 0.28)</west>
+								</renderProperties>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<angleRestricted />
+								<aimPieOffset>(0, 0.25)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_ReinforcedArmor</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>200</Steel>
+					<ComponentIndustrial>10</ComponentIndustrial>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armed/J70_MortarPlatform</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_ReinforcedArmor</key>
+				<label>Reinforced Armor</label>
+				<description>Weld a layer of reinforced steel plating to the vehicle, increasing its armor value at the cost of increasing vehicle mass and lowering cargo capacity. Allows mounting heavier turret variant.</description>
+				<icon>Things/Vehicles/Upgrades/J70_ArmorUpgrade</icon>
+				<work>1500</work>
+				<gridCoordinate>(27, 10)</gridCoordinate>
+				<drawSize>(80, 80)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ArmedTrunk</li>
+				</prerequisiteNodes>
+				<disableIfUpgradeNodesEnabled>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</disableIfUpgradeNodesEnabled>
+				<upgrades>
+					<li Class="Vehicles.VehicleUpgrade">
+						<roles>
+							<li>
+								<key>gunner</key>
+								<editKey>gunnerExpansion</editKey>
+								<slots>2</slots>
+								<slotsToOperate>1</slotsToOperate>
+							</li>
+						</roles>
+					</li>
+					<li Class="Vehicles.StatUpgrade">
+						<stats>
+							<li>
+								<def>ArmorRating_Blunt</def>
+								<value>0.16</value>
+							</li>
+							<li>
+								<def>ArmorRating_Sharp</def>
+								<value>0.18</value>
+							</li>
+						</stats>
+						<vehicleStats>
+							<!-- <li>
+								<def>AccelerationRate</def>
+								<value>-0.01</value>
+							</li> -->
+							<li>
+								<def>Mass</def>
+								<value>300</value>
+							</li>
+							<li>
+								<def>CargoCapacity</def>
+								<value>-50</value>
+							</li>
+						</vehicleStats>
+					</li>
+				</upgrades>
+				<ingredients>
+					<Steel>200</Steel>
+				</ingredients>
+				<graphicOverlays>
+					<li>
+						<graphicData>
+							<texPath>Things/Vehicles/J70/Armored/J70</texPath>
+							<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+							<drawSize>(4.5, 4.5)</drawSize>
+							<layer>1</layer>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+
+			<li>
+				<key>FW_Mount_2A28</key>
+				<label>Mount 2A28 Cannon</label>
+				<description>Change the main turret to be 2A28 Cannon, allowing for more devastating shots over significantly longer distance, but vulnerable during reload.</description>
+				<icon>Things/Vehicles/Upgrades/2A28_TurretUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(32, 7)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ReinforcedArmor</li>
+				</prerequisiteNodes>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>50</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_2A28Cannon_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.55)</north>
+									<south>(0, 1.1)</south>
+									<east>(-1.1, 0.65)</east>
+									<west>(1.1, 0.65)</west>
+								</renderProperties>
+								<drawLayer>21</drawLayer>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<angleRestricted />
+								<aimPieOffset>(0, 0.9)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_KPVT</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>200</Steel>
+					<ComponentIndustrial>10</ComponentIndustrial>
+				</ingredients>
+			</li>
+
+			<li>
+				<key>FW_Mount_KPVT</key>
+				<label>Mount KPVT heavy machine gun</label>
+				<description>Change the main turret to be KPVT heavy machine gun, allowing for more impactful rapid shots suitable for lightly armored vehicle.</description>
+				<icon>Things/Vehicles/Upgrades/KPVT_TurretUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(32, 13)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<prerequisiteNodes>
+					<li>FW_ReinforcedArmor</li>
+				</prerequisiteNodes>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>Mass</def>
+								<value>50</value>
+							</li>
+						</vehicleStats>
+					</li>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_KPVTHMG_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.6)</north>
+									<south>(0, 1.2)</south>
+									<east>(-1.2, 0.65)</east>
+									<west>(1.2, 0.65)</west>
+								</renderProperties>
+								<drawLayer>21</drawLayer>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<angleRestricted />
+								<aimPieOffset>(0, 0.9)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+					</li>
+				</upgrades>
+				<replaces>
+					<li>FW_Mount_2A28</li>
+					<li>FW_Mount_MG3</li>
+					<li>FW_Mount_M1919</li>
+					<li>FW_Mount_PKM</li>
+					<li>FW_Mount_DShK</li>
+					<li>FW_Mount_M2HB</li>
+					<li>FW_Mount_MK19</li>
+					<li>FW_Mount_SPG9</li>
+					<li>FW_Mount_BGM71TOW</li>
+					<li>FW_Mount_S5RocketPodDirect</li>
+					<li>FW_Modify_S5RocketPodIndirect</li>
+					<li>FW_Mount_Mortar</li>
+					<li>FW_Mount_HowitzerDirect</li>
+					<li>FW_Modify_HowitzerIndirect</li>
+				</replaces>
+				<ingredients>
+					<Steel>200</Steel>
+					<ComponentIndustrial>8</ComponentIndustrial>
+				</ingredients>
+			</li>
+
+			<!-- Basic -->
+
+			<li>
+				<key>FW_CargoCapacity</key>
+				<label>Cargo Capacity</label>
+				<description>Improve the cargo capacity of the vehicle slightly.</description>
+				<icon>Things/Vehicles/Upgrades/CargoCapacityUpgrade</icon>
+				<work>600</work>
+				<gridCoordinate>(38, 3)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>CargoCapacity</def>
+								<value>50</value>
+							</li>
+						</vehicleStats>
+					</li>
+				</upgrades>
+				<ingredients>
+					<Steel>50</Steel>
+				</ingredients>
+			</li>
+
+			<li>
+				<key>FW_Engine_Upgrade</key>
+				<label>Engine</label>
+				<description>Improve the engine of the vehicle, allowing it to reach higher maximum speed.</description>
+				<icon>Things/Vehicles/Upgrades/EngineUpgrade</icon>
+				<work>1700</work>
+				<gridCoordinate>(38, 7)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>MoveSpeed</def>
+								<value>1.0</value>
+							</li>
+						</vehicleStats>
+					</li>
+				</upgrades>
+				<ingredients>
+					<!-- <VVE_EngineBlock>1</VVE_EngineBlock> -->
+					<Steel>30</Steel>
+					<ComponentIndustrial>1</ComponentIndustrial>
+				</ingredients>
+			</li>
+
+			<!-- <li>
+				<key>FW_Acceleration</key>
+				<label>Acceleration</label>
+				<description>Improve shifting capabilities of transmission to increase acceleration speed of the vehicle slightly.</description>
+				<icon>Things/Vehicles/Upgrades/Upgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(24, 15)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>AccelerationRate</def>
+								<value>0.005</value>
+							</li>
+						</vehicleStats>
+					</li>
+				</upgrades>
+				<ingredients>
+					<VVE_CarTransmission>1</VVE_CarTransmission>
+					<Steel>20</Steel>
+					<ComponentIndustrial>1</ComponentIndustrial>
+				</ingredients>
+			</li> -->
+
+			<li>
+				<key>FW_FuelEfficiency_Upgrade</key>
+				<label>Fuel Consumption</label>
+				<description>Improve the exhaust system of the vehicle, improving fuel efficiency slightly.</description>
+				<icon>Things/Vehicles/Upgrades/FuelEfficiencyUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(38, 11)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<statCategories>
+							<li>
+								<def>FuelConsumptionRate</def>
+								<value>-2</value>
+							</li>
+						</statCategories>
+					</li>
+				</upgrades>
+				<ingredients>
+					<!-- <VVE_CarExhaust>2</VVE_CarExhaust> -->
+					<Steel>20</Steel>
+					<ComponentIndustrial>1</ComponentIndustrial>
+				</ingredients>
+			</li>
+
+			<li>
+				<key>FW_FuelCapacity_Upgrade</key>
+				<label>Fuel Capacity</label>
+				<description>Increase the size of the chemtank slightly.</description>
+				<icon>Things/Vehicles/Upgrades/FuelCapacityUpgrade</icon>
+				<work>800</work>
+				<gridCoordinate>(38, 15)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<statCategories>
+							<li>
+								<def>FuelCapacity</def>
+								<value>50</value>
+							</li>
+						</statCategories>
+					</li>
+				</upgrades>
+				<ingredients>
+					<Steel>50</Steel>
+				</ingredients>
+			</li>
+		</nodes>
+	</Vehicles.UpgradeTreeDef>
+
+</Defs>

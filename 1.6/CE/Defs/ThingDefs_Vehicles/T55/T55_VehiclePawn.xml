@@ -428,30 +428,6 @@
 					<ArmorRating_Sharp>10</ArmorRating_Sharp>
 				</armor>
 			</li>
-				<li>
-			<key>MainTurret</key>
-			<label>Main Turret</label>
-			<health>800</health>
-			<depth>External</depth>
-			<hitWeight>6</hitWeight>
-			<armor>
-			<ArmorRating_Blunt>52</ArmorRating_Blunt>
-			<ArmorRating_Sharp>26</ArmorRating_Sharp>
-			</armor>
-			<hitbox>
-			<cells>
-				<li>(-1, 1)</li>
-				<li>(-1, 0)</li>
-				<li>(-1, -1)</li>
-				<li>(0, 1)</li>
-				<li>(0, 0)</li>
-				<li>(0, -1)</li>
-				<li>(1, 1)</li>
-				<li>(1, 0)</li>
-				<li>(1, -1)</li>
-			</cells>
-			</hitbox>
-		</li>
 		</components>
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">

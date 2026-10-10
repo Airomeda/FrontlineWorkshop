@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
+		<defName>FW_TFiftyFive</defName>
+		<label>T-55</label>
+		<description>A main battle tank fighting vehicle, the T-55 is a tank with a lot of modification potential. Decent cargo capacity along with four crew capacity. All-around armor effective against high caliber rounds and close-blast shell fragments, armed with a 100mm D-10T cannon turret coupled with a top-mounted turret that both can fire either mobile or stationary.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x2, Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<graphicData>
+			<texPath>Things/Vehicles/T55/T55</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(5.25, 5.25)</drawSize>
+			<color>(86, 108, 80)</color>
+			<colorTwo>(80, 120, 70)</colorTwo>
+			<colorThree>(50, 90, 30)</colorThree>
+		</graphicData>
+		<fillPercent>1</fillPercent>
+		<buildDef>FW_TFiftyFive_Blueprint</buildDef>
+		<size>(3, 5)</size>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+		<statBases>
+			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Flammability>0.25</Flammability>
+			<MarketValue>4100</MarketValue>
+		</statBases>
+		<vehicleStats>
+			<Mass>500</Mass>
+			<MoveSpeed>7.0</MoveSpeed>
+			<CargoCapacity>500</CargoCapacity>
+			<RepairRate>0.3</RepairRate>
+		</vehicleStats>
+		<soundOneShotsOnEvent>
+			<li>
+				<key>PawnEntered</key>
+				<value>FW_VehicleEnter</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>FW_VehicleEnter</value>
+			</li>
+			<li>
+				<key>IgnitionOn</key>
+				<value>FW_VehicleStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>FW_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		<soundSustainersOnEvent>
+			<li>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
+				<value>FW_VehicleEngineHeavy</value>
+			</li>
+		</soundSustainersOnEvent>
+		<race>
+			<baseBodySize>4.0</baseBodySize>
+		</race>
+		<properties>
+			<customRoadCosts AssignDefaults="0.4" />
+			<winterSpeedMultiplier>1.0</winterSpeedMultiplier>
+			<worldSpeedMultiplier>1.0</worldSpeedMultiplier>
+			<customHillinessCosts>
+				<SmallHills>0.3</SmallHills>
+				<LargeHills>1.0</LargeHills>
+				<Mountainous>2.0</Mountainous>
+			</customHillinessCosts>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 4)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>gunner</key>
+					<label>Gunner</label>
+					<slots>2</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>Turret</handlingTypes>
+					<turretIds>
+						<li>mainTurret</li>
+						<li>coaxialTurret</li>
+						<li>LSL</li>
+						<li>RSL</li>
+					</turretIds>
+				</li>
+				<li>
+					<key>commander</key>
+					<label>Commander</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>Turret</handlingTypes>
+					<turretIds>
+						<li>topMountedTurret</li>
+					</turretIds>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>1</slots>
+				</li>
+			</roles>
+		</properties>
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>100</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>FuelTank</key>
+				<label>Fuel Tank</label>
+				<health>100</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak" />
+				</reactors>
+				<hitbox>
+					<cells>
+						<li>(0, -2)</li>
+						<li>(0, -1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Gearbox</key>
+				<label>Gearbox</label>
+				<health>50</health>
+				<depth>Internal</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<hitbox>
+					<cells>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>AmmoRack</key>
+				<label>Ammo Rack</label>
+				<health>50</health>
+				<depth>Internal</depth>
+				<hitbox>
+					<cells>
+						<li>(1, 0)</li>
+					</cells>
+				</hitbox>
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.5</chance>
+						<radius>5</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+			</li>
+			<li>
+				<key>TransmissionShaft</key>
+				<label>Transmission Shaft</label>
+				<health>40</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>LeftTrack</key>
+				<label>Left Track</label>
+				<health>150</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<hitWeight>2</hitWeight>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightTrack</key>
+				<label>Right Track</label>
+				<health>150</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<hitWeight>2</hitWeight>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftRoadWheels</key>
+				<label>Left Road Wheels</label>
+				<health>120</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightRoadWheels</key>
+				<label>Right Road Wheels</label>
+				<health>120</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftDriveSprocket</key>
+				<label>Left Drive Sprocket</label>
+				<health>90</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightDriveSprocket</key>
+				<label>Right Drive Sprocket</label>
+				<health>90</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftTensionerWheel</key>
+				<label>Left Tensioner Wheel</label>
+				<health>90</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, 2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightTensionerWheel</key>
+				<label>Right Tensioner Wheel</label>
+				<health>90</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, 2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>FrontArmorPlating</key>
+				<label>Front Armor Plating</label>
+				<health>880</health>
+				<depth>External</depth>
+				<hitWeight>8</hitWeight>
+				<armor>
+					<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftArmorPlating</key>
+				<label>Left Armor Plating</label>
+				<health>700</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				<armor>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightArmorPlating</key>
+				<label>Right Armor Plating</label>
+				<health>700</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				<armor>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+				</armor>
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>BackArmorPlating</key>
+				<label>Rear Armor Plating</label>
+				<health>400</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+				<armor>
+					<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+				</armor>
+			</li>
+			<li>
+				<key>Roof</key>
+				<label>Roof Armor Plating</label>
+				<health>400</health>
+				<depth>External</depth>
+				<hitWeight>10</hitWeight>
+				<armor>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+				</armor>
+			</li>
+		</components>
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>32</fuelConsumptionRate>
+				<fuelConsumptionWorldMultiplier>1</fuelConsumptionWorldMultiplier>
+				<fuelCapacity>120</fuelCapacity>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>FW_D10TCannonA_Turret</turretDef>
+						<renderProperties>
+							<north>(0, -0.04)</north>
+							<south>(0, 0.15)</south>
+							<east>(-0.03, 0.31)</east>
+							<west>(0.03, 0.31)</west>
+						</renderProperties>
+						<gizmoLabel>Main Turret</gizmoLabel>
+						<aimPieOffset>(0.05, 3.67)</aimPieOffset>
+						<drawLayer>2</drawLayer>
+						<key>mainTurret</key>
+						<component>
+							<key>MainTurret</key>
+							<healthPercent>0.6</healthPercent>
+						</component>
+					</li>
+					<li>
+						<turretDef>FW_SGMTCoaxial_Turret</turretDef>
+						<gizmoLabel>Coaxial MG</gizmoLabel>
+						<renderProperties>
+							<north>(0.35, 0.8)</north>
+							<south>(-0.35, -0.8)</south>
+							<east>(0.28, -0.4)</east>
+							<west>(-0.28, -0.4)</west>
+						</renderProperties>
+						<angleRestricted>(355,5)</angleRestricted>
+						<aimPieOffset>(0, -0.5)</aimPieOffset>
+						<key>coaxialTurret</key>
+						<drawLayer>3</drawLayer>
+						<parentKey>mainTurret</parentKey>
+					</li>
+					<li>
+						<turretDef>FW_DShKHMG_Turret</turretDef>
+						<gizmoLabel>Support MG</gizmoLabel>
+						<renderProperties>
+							<north>(0.45, 0.27)</north>
+							<south>(-0.45, -0.27)</south>
+							<east>(0.28, -0.4)</east>
+							<west>(-0.28, -0.4)</west>
+						</renderProperties>
+						<aimPieOffset>(0, 0.45)</aimPieOffset>
+						<key>topMountedTurret</key>
+						<drawLayer>5</drawLayer>
+						<parentKey>mainTurret</parentKey>
+					</li>
+				</turrets>
+			</li>
+			<li Class="Vehicles.CompProperties_UpgradeTree">
+				<def>FW_TFiftyFive_UpgradeTree</def>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+
+</Defs>

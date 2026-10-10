@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>FW_Bullet_D10TCannon_Turret</defName>
+		<label>high-explosive shell</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3, 3)</drawSize>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>42</damageAmountBase>
+			<speed>146</speed>
+			<explosionRadius>4.9</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+	</ThingDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_D10TCannonA_Turret</defName>
+		<label>D-10T cannon</label>
+		<description>D-10T cannon loaded with 100x695mmR Shell.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>FW_Shot_D10TSound</shotSound>
+		<projectile>FW_Bullet_D10TCannon_Turret</projectile>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		<reloadTimer>3.0</reloadTimer>
+		<reloadTimerMultiplierPerCrewCount>
+			<points>
+				<li>(1, 1)</li>
+				<li>(2, 0.75)</li>
+			</points>
+		</reloadTimerMultiplierPerCrewCount>
+		<warmUpTimer>2.8</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1.5</rotationSpeed>
+		<projectileOffset>3.75</projectileOffset>
+		<projectileShifting>
+			<li>-0.1</li>
+		</projectileShifting>
+		<minRange>4</minRange>
+		<maxRange>86</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>12</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<gizmoIconTexPath>Things/Vehicles/T55/D10TCannonA_TurretGizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.05</gizmoIconScale>
+		<graphicData>
+			<texPath>Things/Vehicles/T55/D10TCannonA_Top</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(9.25, 9.25)</drawSize>
+		</graphicData>
+		<graphics>
+			<li>
+				<graphicData>
+					<texPath>Things/Vehicles/T55/D10TCannon_Barrel</texPath>
+					<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+					<shaderType>CutoutComplexPattern</shaderType>
+					<drawSize>(9.25, 9.25)</drawSize>
+				</graphicData>
+				<recoil>
+					<distanceTotal>0.35</distanceTotal>
+					<distancePerTick>0.05</distancePerTick>
+					<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+				</recoil>
+			</li>
+		</graphics>
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<offset>(0, 0, 2.75)</offset>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_D10TCannonB_Turret</defName>
+		<label>D-10T cannon</label>
+		<description>D-10T cannon loaded with 100x695mmR Shell, comes with smoke launchers.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>FW_Shot_D10TSound</shotSound>
+		<projectile>FW_Bullet_D10TCannon_Turret</projectile>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		<reloadTimer>3.0</reloadTimer>
+		<reloadTimerMultiplierPerCrewCount>
+			<points>
+				<li>(1, 1)</li>
+				<li>(2, 0.75)</li>
+			</points>
+		</reloadTimerMultiplierPerCrewCount>
+		<warmUpTimer>2.8</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1.5</rotationSpeed>
+		<projectileOffset>3.75</projectileOffset>
+		<projectileShifting>
+			<li>-0.1</li>
+		</projectileShifting>
+		<minRange>4</minRange>
+		<maxRange>86</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>12</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<gizmoIconTexPath>Things/Vehicles/T55/D10TCannonB_TurretGizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.05</gizmoIconScale>
+		<graphicData>
+			<texPath>Things/Vehicles/T55/D10TCannonB_Top</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(9.25, 9.25)</drawSize>
+		</graphicData>
+		<graphics>
+			<li>
+				<graphicData>
+					<texPath>Things/Vehicles/T55/D10TCannon_Barrel</texPath>
+					<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+					<shaderType>CutoutComplexPattern</shaderType>
+					<drawSize>(9.25, 9.25)</drawSize>
+				</graphicData>
+				<recoil>
+					<distanceTotal>0.35</distanceTotal>
+					<distancePerTick>0.05</distancePerTick>
+					<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+				</recoil>
+			</li>
+		</graphics>
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<offset>(0, 0, 2.75)</offset>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_SGMTCoaxial_Turret</defName>
+		<label>SGMT coaxial machinegun</label>
+		<description>SGMT machinegun loaded with 7.62x54mmR.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_Minigun</shotSound>
+		<projectile>Bullet_LMG</projectile>
+		<reloadTimer>4.8</reloadTimer>
+		<warmUpTimer>1.3</warmUpTimer>
+		<magazineCapacity>200</magazineCapacity>
+		<chargePerAmmoCount>0.25</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2.0</rotationSpeed>
+		<projectileOffset>0.15</projectileOffset>
+		<maxRange>62</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>10</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<spreadRadius>1</spreadRadius>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>25</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+			</li>
+		</fireModes>
+		<graphicData>
+			<texPath>Things/Vehicles/None</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		<gizmoIconTexPath>Things/Vehicles/T55/T55Coaxial_TurretGizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.1</gizmoIconScale>
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_LeftSmokeLauncher_Turret</defName>
+		<label>smoke launcher (left)</label>
+		<description>smoke launcher loaded with 40x46mm Smoke Grenade.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_IncendiaryLauncher</shotSound>
+		<projectile>Bullet_SmokeLauncher</projectile>
+		<reloadTimer>5</reloadTimer>
+		<reloadTimerMultiplierPerCrewCount>
+			<points>
+				<li>(1, 1)</li>
+				<li>(2, 0.5)</li>
+			</points>
+		</reloadTimerMultiplierPerCrewCount>
+		<warmUpTimer>0</warmUpTimer>
+		<magazineCapacity>3</magazineCapacity>
+		<chargePerAmmoCount>10</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<minRange>2</minRange>
+		<maxRange>12</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>120</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>3</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>120</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+		<graphicData>
+			<texPath>Things/Vehicles/None</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		<gizmoIconTexPath>Things/Vehicles/T55/SmokeLauncher_Gizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.15</gizmoIconScale>
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_RightSmokeLauncher_Turret</defName>
+		<label>smoke launcher (right)</label>
+		<description>smoke launcher loaded with 40x46mm Smoke Grenade.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_IncendiaryLauncher</shotSound>
+		<projectile>Bullet_SmokeLauncher</projectile>
+		<reloadTimer>5</reloadTimer>
+		<reloadTimerMultiplierPerCrewCount>
+			<points>
+				<li>(1, 1)</li>
+				<li>(2, 0.5)</li>
+			</points>
+		</reloadTimerMultiplierPerCrewCount>
+		<warmUpTimer>0</warmUpTimer>
+		<magazineCapacity>3</magazineCapacity>
+		<chargePerAmmoCount>10</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<minRange>2</minRange>
+		<maxRange>12</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>120</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>3</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>120</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+		<graphicData>
+			<texPath>Things/Vehicles/None</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		<gizmoIconTexPath>Things/Vehicles/T55/SmokeLauncher_Gizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.15</gizmoIconScale>
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+
+</Defs>

@@ -726,6 +726,7 @@
 		<magazineCapacity>1</magazineCapacity>
 		<genericAmmo>false</genericAmmo>
 		<autoSnapTargeting>false</autoSnapTargeting>
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		<rotationSpeed>1.2</rotationSpeed>
 		<projectileOffset>1.9</projectileOffset>
 		<projectileShifting>
@@ -810,6 +811,7 @@
 		<magazineCapacity>1</magazineCapacity>
 		<genericAmmo>false</genericAmmo>
 		<autoSnapTargeting>false</autoSnapTargeting>
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		<rotationSpeed>1.2</rotationSpeed>
 		<projectileOffset>1.9</projectileOffset>
 		<projectileShifting>
@@ -894,6 +896,7 @@
 		<magazineCapacity>1</magazineCapacity>
 		<genericAmmo>false</genericAmmo>
 		<autoSnapTargeting>false</autoSnapTargeting>
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		<rotationSpeed>1.2</rotationSpeed>
 		<projectileOffset>1.9</projectileOffset>
 		<projectileShifting>
