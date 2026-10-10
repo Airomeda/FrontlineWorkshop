@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>FW_TFiftyFive_Blueprint</defName>
+		<label>T-55</label>
+		<description>A main battle tank fighting vehicle, the T-55 is a tank with a lot of modification potential. Decent cargo capacity along with four crew capacity. All-around armor effective against high caliber rounds and close-blast shell fragments, armed with a 100mm D-10T cannon turret coupled with a top-mounted turret that both can fire either mobile or stationary.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x2, Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		<graphicData>
+			<texPath>Things/Vehicles/T55/T55</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5.25, 5.25)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>18000</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		<size>(3, 5)</size>
+		<researchPrerequisites>
+			<li>FW_TacticalVehicle</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>1620</Steel>
+			<Silver>50</Silver>
+			<Plasteel>20</Plasteel>
+			<ComponentIndustrial>58</ComponentIndustrial>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>FW_TFiftyFive</thingToSpawn>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+
+</Defs>

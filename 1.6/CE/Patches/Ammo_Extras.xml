@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_100x695mmRCannonShell"]/ammoTypes</xpath>
+		<value>
+			<Ammo_100x695mmRCannonShell_EMP>Bullet_100x695mmRCannonShell_EMP</Ammo_100x695mmRCannonShell_EMP>
+		</value>
+	</Operation>
+
+</Patch>
