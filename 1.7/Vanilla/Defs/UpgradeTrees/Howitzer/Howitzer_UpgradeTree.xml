@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <Vehicles.UpgradeTreeDef>
+    <defName>FW_105mmHowitzer_UpgradeTree</defName>
+    <nodes>
+
+      <li>
+				<key>FW_Modify_HowitzerIndirect</key>
+				<label>Modify Howitzer (Indirect)</label>
+				<description>Modify mounted Howitzer to shoot indirectly, allowing for bombardment over significantly longer distance, but vulnerable during reload from removed gunshield.</description>
+				<icon>Things/Vehicles/Upgrades/HowitzerIndirect_TurretUpgrade</icon>
+				<work>500</work>
+        <refundFraction>1</refundFraction>
+        <gridCoordinate>(20, 5)</gridCoordinate>
+        <drawSize>(120, 120)</drawSize>
+        <upgrades>
+          <li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_HowitzerIndirect_Turret</turretDef>
+								<drawLayer>22</drawLayer>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<angleRestricted>(337, 23)</angleRestricted>
+								<aimPieOffset>(0, 0.75)</aimPieOffset>
+								<key>mainTurret</key>
+							</li>
+						</turrets>
+            <removeTurrets>
+              <li>mainTurret</li>
+            </removeTurrets>
+					</li>
+          <li Class="Vehicles.VehicleUpgrade">
+            <armor>
+              <li>
+                <key>Gunshield</key>
+                <type>Set</type>
+                <statModifiers>
+                  <ArmorRating_Blunt>0.0</ArmorRating_Blunt>
+                  <ArmorRating_Sharp>0.0</ArmorRating_Sharp>
+                </statModifiers>
+              </li>
+            </armor>
+            <health>
+              <li>
+                <key>Gunshield</key>
+                <value>-99</value>
+                <type>Add</type>
+              </li>
+            </health>
+          </li>
+          <li Class="Vehicles.StatUpgrade">
+            <vehicleStats>
+              <li>
+                <def>Mass</def>
+                <value>-300</value>
+              </li>
+            </vehicleStats>
+          </li>
+        </upgrades>
+        <ingredients>
+          <Steel>20</Steel>
+        </ingredients>
+      </li>
+
+    </nodes>
+  </Vehicles.UpgradeTreeDef>
+
+</Defs>

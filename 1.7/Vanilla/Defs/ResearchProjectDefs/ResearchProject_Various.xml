@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- Towed Emplacement -->
+	<ResearchProjectDef>
+		<defName>FW_TowedEmplacement</defName>
+		<label>towed emplacement</label>
+		<description>Learn to construct wheeled emplacement, suitable for field and urban combat.</description>
+		<baseCost>2000</baseCost>
+		<tab>FW_VehiclesTab</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>Mortars</li>
+		</prerequisites>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->towable artillery</li>
+				<li>subject_story->customized stationary artillery modified as a wheeled emplacement.</li>
+				<li>subject_gerund->enhancing stationary emplacement</li>
+			</rulesStrings>
+		</generalRules>
+		<researchViewX>0.5</researchViewX>
+		<researchViewY>2.5</researchViewY>
+	</ResearchProjectDef>
+
+	<!-- Technical Automotive -->
+	<ResearchProjectDef>
+		<defName>FW_TechnicalAutomotive</defName>
+		<label>technical automotive</label>
+		<description>Learn to construct customizable transport vehicles, suitable for field and urban combat.</description>
+		<baseCost>2000</baseCost>
+		<tab>FW_VehiclesTab</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>Fabrication</li>
+		</prerequisites>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->technical vehicles</li>
+				<li>subject_story->customized transport grade vehicles into combat capable war machine</li>
+				<li>subject_story->introduced as a cheap alternative</li>
+				<li>subject_gerund->enhancing transport vehicle</li>
+			</rulesStrings>
+		</generalRules>
+		<researchViewX>1.5</researchViewX>
+		<researchViewY>2.5</researchViewY>
+	</ResearchProjectDef>
+
+	<!-- tactical vehicle -->
+	<ResearchProjectDef>
+		<defName>FW_TacticalVehicle</defName>
+		<label>tactical vehicle</label>
+		<description>Learn to construct armored combat vehicles with utility, suitable for tactical combat.</description>
+		<baseCost>4000</baseCost>
+		<tab>FW_VehiclesTab</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>Fabrication</li>
+		</prerequisites>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->tactical war vehicles</li>
+				<li>subject_story->required as a result of expanding battle tactic</li>
+				<li>subject_story->combined arms with intel allowing adaptability</li>
+				<li>subject_gerund->introducing tactical mechanized warfare</li>
+			</rulesStrings>
+		</generalRules>
+		<researchViewX>2.5</researchViewX>
+		<researchViewY>2.5</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

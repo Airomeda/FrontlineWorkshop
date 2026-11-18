@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName="FW_TechnicalAutomotive" or defName="FW_TacticalVehicle"]/prerequisites</xpath>
+		<value>
+			<li>VVE_BasicVehicles</li>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>FW_Bullet_RH202Autocannon</defName>
+		<label>Bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>27</damageAmountBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_RH202Autocannon_Turret</defName>
+		<label>RH202 autocannon turret</label>
+		<description>RH202 autocannon loaded with 20x139mm.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>FW_Shot_RH202Sound</shotSound>
+		<projectile>FW_Bullet_RH202Autocannon</projectile>
+		<reloadTimer>5.2</reloadTimer>
+		<warmUpTimer>1.3</warmUpTimer>
+		<magazineCapacity>100</magazineCapacity>
+		<chargePerAmmoCount>0.5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2.0</rotationSpeed>
+		<projectileOffset>1.6</projectileOffset>
+		<projectileShifting>
+			<li>0</li>
+		</projectileShifting>
+		<minRange>2</minRange>
+		<maxRange>80</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>5</shotsPerBurst>
+				<ticksBetweenShots>4</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>50</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>25</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Sustained</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>2</ticksBetweenShots>
+				<ticksBetweenBursts>10</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<cooldown>
+			<heatPerShot>1.5</heatPerShot>
+			<dissipationRate>0.25</dissipationRate>
+			<dissipationCapMultiplier>1</dissipationCapMultiplier>
+		</cooldown>
+		<gizmoIconTexPath>Things/Vehicles/Wiesel/RH202Autocannon_TurretGizmo</gizmoIconTexPath>
+		<gizmoIconScale>1.05</gizmoIconScale>
+		<graphicData>
+			<texPath>Things/Vehicles/Wiesel/RH202Autocannon_Top</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(5.5, 5.5)</drawSize>
+		</graphicData>
+		<graphics>
+			<li>
+				<graphicData>
+					<texPath>Things/Vehicles/Wiesel/RH202Autocannon_Barrel</texPath>
+					<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+					<shaderType>CutoutComplexPattern</shaderType>
+					<drawSize>(5.5, 5.5)</drawSize>
+				</graphicData>
+				<recoil>
+					<distanceTotal>0.10</distanceTotal>
+					<distancePerTick>0.1</distancePerTick>
+					<speedMultiplierPostRecoil>0.25</speedMultiplierPostRecoil>
+				</recoil>
+			</li>
+		</graphics>
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>FW_Mote_AutocannonPlume</moteDef>
+				<offset>(-0.2, 0, 2)</offset>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_WieselMG3LMG_Turret</defName>
+		<label>Wiesel MG3 turret</label>
+		<description>MG3 light machine gun loaded with 7.62x51mm NATO.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_Minigun</shotSound>
+		<projectile>Bullet_LMG</projectile>
+		<reloadTimer>3.2</reloadTimer>
+		<warmUpTimer>1.1</warmUpTimer>
+		<magazineCapacity>100</magazineCapacity>
+		<chargePerAmmoCount>0.25</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2.0</rotationSpeed>
+		<projectileOffset>0.15</projectileOffset>
+		<maxRange>75</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>30</shotsPerBurst>
+				<ticksBetweenShots>3</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<label>Auto</label>
+				<texPath>UI/Gizmos/FireRate_Auto</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>15</shotsPerBurst>
+				<ticksBetweenShots>3</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<spreadRadius>1</spreadRadius>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>3</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<graphicData>
+			<texPath>Things/Vehicles/Wiesel/MG3_LMG</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(2.25, 2.25)</drawSize>
+		</graphicData>
+		<gizmoIconTexPath>Things/Vehicles/Wiesel/MG3_LMG</gizmoIconTexPath>
+		<gizmoIconScale>1.2</gizmoIconScale>
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+
+</Defs>

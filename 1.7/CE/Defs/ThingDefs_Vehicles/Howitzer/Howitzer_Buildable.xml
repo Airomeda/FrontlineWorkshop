@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+    <defName>FW_105mmHowitzer_Blueprint</defName>
+    <label>105mm Howitzer</label>
+    <description>A towed version of high caliber, relatively compact field artillery piece for indirect fire at extended ranges.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Gunner x1\nCommander x1\nLoader 1x\nAssistant Loader 1x\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; None</description>
+    <designationCategory>VF_Vehicles</designationCategory>
+    <graphicData>
+      <texPath>Things/Vehicles/Howitzer/Howitzer</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>4</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(3, 3)</size>
+    <researchPrerequisites>
+      <li>FW_TowedEmplacement</li>
+    </researchPrerequisites>
+    <costList>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <Steel>400</Steel>
+      <Chemfuel>40</Chemfuel>
+    </costList>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <thingToSpawn>FW_105mmHowitzer</thingToSpawn>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </Vehicles.VehicleBuildDef>
+
+</Defs>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>FW_Wiesel_Blueprint</defName>
+		<label>Wiesel</label>
+		<description>A lightly armored fighting vehicle, the Wiesel is a light tank capable of reconnaisance. Small cargo capacity along with two crew capacity, all-terrain capability, the main downside is that it's not as potent as a general light tank in combat.\n\nThe Wiesel has good fuel efficiency and is quite low-profile along with its high maneuverability and speed covers for its lack of raw fire power.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		<graphicData>
+			<texPath>Things/Vehicles/Wiesel/Wiesel</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.25, 3.25)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>15000</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		<size>(2, 3)</size>
+		<researchPrerequisites>
+			<li>FW_TacticalVehicle</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>1345</Steel>
+			<Silver>50</Silver>
+			<Plasteel>20</Plasteel>
+			<ComponentIndustrial>38</ComponentIndustrial>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>FW_Wiesel</thingToSpawn>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+
+</Defs>

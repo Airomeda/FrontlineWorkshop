@@ -1,0 +1,72 @@
+<Defs>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>FW_Mortar_Turret</defName>
+		<label>81mm Mortar</label>
+		<description>81mm Mortar loaded with 81mm shells.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Mortar_LaunchA</shotSound>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		<reloadTimer>6</reloadTimer>
+		<reloadTimerMultiplierPerCrewCount>
+			<points>
+				<li>(1, 1)</li>
+				<li>(2, 0.75)</li>
+			</points>
+		</reloadTimerMultiplierPerCrewCount>
+		<warmUpTimer>3.5</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<genericAmmo>false</genericAmmo>
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
+		<rotationSpeed>1.2</rotationSpeed>
+		<projectileOffset>1.9</projectileOffset>
+		<projectileShifting>
+			<li>-0.05</li>
+		</projectileShifting>
+		<minRange>20</minRange>
+		<maxRange>400</maxRange>
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>1</ticksBetweenShots>
+				<ticksBetweenBursts>120</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<gizmoIconTexPath>Things/Vehicles/J70/Mortar_Turret</gizmoIconTexPath>
+		<gizmoIconScale>1.05</gizmoIconScale>
+		<graphicData>
+			<texPath>Things/Mote/Transparent</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		<graphics>
+			<li>
+				<graphicData>
+					<texPath>Things/Vehicles/J70/Mortar_Turret</texPath>
+					<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+					<drawSize>(2.4, 2.4)</drawSize>
+				</graphicData>
+			</li>
+		</graphics>
+		<ammunition>
+			<categories>
+				<li>MortarShells</li>
+			</categories>
+		</ammunition>
+		<projectileShifting>
+			<li>-0.75</li>
+			<li>0.5</li>
+			<li>-0.25</li>
+			<li>0.125</li>
+			<li>-0.125</li>
+			<li>0.25</li>
+			<li>-0.5</li>
+			<li>0.75</li>
+		</projectileShifting>
+	</Vehicles.VehicleTurretDef>
+
+</Defs>

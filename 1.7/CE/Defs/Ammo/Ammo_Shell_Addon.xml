@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ======= AmmoSet ======= -->
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="100x695mmRCannonShellBase">
+		<defName>Ammo_100x695mmRCannonShell_EMP</defName>
+		<label>100x695mmR cannon shell (EMP)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Cannon/Tank/EMP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>108</MarketValue>
+		</statBases>
+		<ammoClass>GrenadeEMP</ammoClass>
+		<detonateProjectile>Bullet_100x695mmRCannonShell_EMP</detonateProjectile>
+	</ThingDef>
+
+	<!-- ======= Projectiles ======= -->
+	<ThingDef ParentName="Base100x695mmRCannonShell">
+		<defName>Bullet_100x695mmRCannonShell_EMP</defName>
+		<label>100x695mmR cannon shell (EMP)</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Cannon/EMP</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>EMP</damageDef>
+			<damageAmountBase>150</damageAmountBase>
+			<armorPenetrationSharp>0</armorPenetrationSharp>
+			<armorPenetrationBlunt>0</armorPenetrationBlunt>
+			<explosionRadius>4</explosionRadius>
+		</projectile>
+	</ThingDef>
+
+	<!-- ======= Recipes ======= -->
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_100x695mmRCannonShell_EMP</defName>
+		<label>make 100x695mmR EMP cannon shells x2</label>
+		<description>Craft 2 100x695mmR EMP cannon shells.</description>
+		<jobString>Making 100x695mmR EMP cannon shells.</jobString>
+		<researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+		<workAmount>20000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>126</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_100x695mmRCannonShell_EMP>2</Ammo_100x695mmRCannonShell_EMP>
+		</products>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.UpgradeTreeDef>
+		<defName>FW_TFiftyFive_UpgradeTree</defName>
+		<nodes>
+
+			<li>
+				<key>FW_SmokeLaunchers</key>
+				<label>Smoke Launchers</label>
+				<description>Add smoke grenade launchers to the main turret, allowing smoke screen deployment.</description>
+				<icon>Things/Vehicles/Upgrades/SmokeLauncher_Upgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(20, 5)</gridCoordinate>
+				<drawSize>(120, 120)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.TurretUpgrade">
+						<turrets>
+							<li>
+								<turretDef>FW_D10TCannonB_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.04)</north>
+									<south>(0, 0.15)</south>
+									<east>(-0.03, 0.31)</east>
+									<west>(0.03, 0.31)</west>
+								</renderProperties>
+								<gizmoLabel>Main Turret</gizmoLabel>
+								<aimPieOffset>(0.05, 3.67)</aimPieOffset>
+								<drawLayer>2</drawLayer>
+								<key>mainTurret</key>
+								<component>
+									<key>MainTurret</key>
+									<healthPercent>0.6</healthPercent>
+								</component>
+							</li>
+							<li>
+								<turretDef>FW_SGMTCoaxial_Turret</turretDef>
+								<gizmoLabel>Coaxial MG</gizmoLabel>
+								<renderProperties>
+									<north>(0.35, 0.8)</north>
+									<south>(-0.35, -0.8)</south>
+									<east>(0.28, -0.4)</east>
+									<west>(-0.28, -0.4)</west>
+								</renderProperties>
+								<angleRestricted>(355, 5)</angleRestricted>
+								<aimPieOffset>(0, -0.5)</aimPieOffset>
+								<key>coaxialTurret</key>
+								<drawLayer>4</drawLayer>
+								<parentKey>mainTurret</parentKey>
+							</li>
+							<li>
+								<turretDef>FW_DShKHMG_Turret</turretDef>
+								<gizmoLabel>Support MG</gizmoLabel>
+								<renderProperties>
+									<north>(0.45, 0.27)</north>
+									<south>(-0.45, -0.27)</south>
+									<east>(0.28, -0.4)</east>
+									<west>(-0.28, -0.4)</west>
+								</renderProperties>
+								<aimPieOffset>(0, 0.55)</aimPieOffset>
+								<key>topMountedTurret</key>
+								<drawLayer>4</drawLayer>
+								<parentKey>mainTurret</parentKey>
+							</li>
+							<li>
+								<turretDef>FW_LeftSmokeLauncher_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.04)</north>
+									<south>(0, 0.15)</south>
+									<east>(-0.03, 0.31)</east>
+									<west>(0.03, 0.31)</west>
+								</renderProperties>
+								<gizmoLabel>Left Smoke Launcher</gizmoLabel>
+								<angleRestricted>(270, 0)</angleRestricted>
+								<aimPieOffset>(0, 0)</aimPieOffset>
+								<drawLayer>3</drawLayer>
+								<key>LSL</key>
+								<parentKey>mainTurret</parentKey>
+							</li>
+							<li>
+								<turretDef>FW_RightSmokeLauncher_Turret</turretDef>
+								<renderProperties>
+									<north>(0, -0.04)</north>
+									<south>(0, 0.15)</south>
+									<east>(-0.03, 0.31)</east>
+									<west>(0.03, 0.31)</west>
+								</renderProperties>
+								<gizmoLabel>Right Smoke Launcher</gizmoLabel>
+								<angleRestricted>(0, 90)</angleRestricted>
+								<aimPieOffset>(0, 0)</aimPieOffset>
+								<drawLayer>3</drawLayer>
+								<key>RSL</key>
+								<parentKey>mainTurret</parentKey>
+							</li>
+						</turrets>
+						<removeTurrets>
+							<li>mainTurret</li>
+							<li>coaxialTurret</li>
+							<li>topMountedTurret</li>
+						</removeTurrets>
+					</li>
+				</upgrades>
+				<ingredients>
+					<Steel>100</Steel>
+					<ComponentIndustrial>4</ComponentIndustrial>
+				</ingredients>
+			</li>
+			
+			<!-- Basic -->
+
+			<li>
+				<key>FW_Engine_Upgrade</key>
+				<label>Engine</label>
+				<description>Improve the engine of the vehicle, allowing it to reach higher maximum speed.</description>
+				<icon>Things/Vehicles/Upgrades/EngineUpgrade</icon>
+				<work>1700</work>
+				<gridCoordinate>(38, 3)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<vehicleStats>
+							<li>
+								<def>MoveSpeed</def>
+								<value>1.0</value>
+							</li>
+						</vehicleStats>
+					</li>
+				</upgrades>
+				<ingredients>
+					<!-- <VVE_EngineBlock>1</VVE_EngineBlock> -->
+					<Steel>30</Steel>
+					<ComponentIndustrial>1</ComponentIndustrial>
+				</ingredients>
+			</li>
+
+			<li>
+				<key>FW_FuelEfficiency_Upgrade</key>
+				<label>Fuel Consumption</label>
+				<description>Improve the exhaust system of the vehicle, improving fuel efficiency slightly.</description>
+				<icon>Things/Vehicles/Upgrades/FuelEfficiencyUpgrade</icon>
+				<work>1000</work>
+				<gridCoordinate>(38, 7)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<statCategories>
+							<li>
+								<def>FuelConsumptionRate</def>
+								<value>-2</value>
+							</li>
+						</statCategories>
+					</li>
+				</upgrades>
+				<ingredients>
+					<!-- <VVE_CarExhaust>2</VVE_CarExhaust> -->
+					<Steel>20</Steel>
+					<ComponentIndustrial>1</ComponentIndustrial>
+				</ingredients>
+			</li>
+
+			<li>
+				<key>FW_FuelCapacity_Upgrade</key>
+				<label>Fuel Capacity</label>
+				<description>Increase the size of the chemtank slightly.</description>
+				<icon>Things/Vehicles/Upgrades/FuelCapacityUpgrade</icon>
+				<work>800</work>
+				<gridCoordinate>(38, 11)</gridCoordinate>
+				<drawSize>(60, 60)</drawSize>
+				<upgrades>
+					<li Class="Vehicles.StatUpgrade">
+						<statCategories>
+							<li>
+								<def>FuelCapacity</def>
+								<value>50</value>
+							</li>
+						</statCategories>
+					</li>
+				</upgrades>
+				<ingredients>
+					<Steel>50</Steel>
+				</ingredients>
+			</li>
+
+		</nodes>
+	</Vehicles.UpgradeTreeDef>
+
+</Defs>
