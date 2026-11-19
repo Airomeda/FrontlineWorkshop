@@ -28,10 +28,6 @@
 								<aimPieOffset>(0.05, 3.67)</aimPieOffset>
 								<drawLayer>2</drawLayer>
 								<key>mainTurret</key>
-								<component>
-									<key>MainTurret</key>
-									<healthPercent>0.6</healthPercent>
-								</component>
 							</li>
 							<li>
 								<turretDef>FW_SGMTCoaxial_Turret</turretDef>
